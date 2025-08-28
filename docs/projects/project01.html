@@ -1,0 +1,421 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+<meta name="robots" content="noindex">
+    
+    <meta http-equiv="refresh" >
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    
+
+    <style>
+
+
+      
+
+      body {
+          background-image: url('../resources/backgrounds/pirate.gif');
+      
+          background-attachment: fixed;
+          background-size: cover;
+        }
+
+
+
+
+
+
+    </style>
+
+
+<link rel="stylesheet" href="../resources/progresources/globalcss.css">
+
+
+
+
+
+
+</head>
+
+
+
+
+  
+
+<body>
+
+
+  
+
+
+<div class="headstyle">
+
+    <header >
+      <div>
+
+
+
+
+        <a href="../music.html">music</a>
+        <a href="../drawings.html">art</a>
+        <a href="../blog.html">blog</a>
+        <a href="../projects.html">projects</a> 
+
+        <a href="../wikifun.html">wikifun!</a>
+
+
+
+
+
+
+
+
+
+        <a href="../dogshit.html">dogshit</a>
+
+
+
+
+
+  <a href="whatisrss.html">get site updates</a>
+
+
+
+
+          autoplay enabled:
+    <input type="checkbox" id="autoplay" name="autoplayy" value="autoplayyy" onChange="toggleaudio()">
+
+      </div>
+
+    </header>
+  </div>`
+
+
+
+  
+
+
+
+
+<audio id="bgm" loop>
+   
+</audio>
+
+
+
+
+
+
+
+
+<audio id="postmusicclick">
+  <source src="../resources/onclickaudio/button9.wav" type="audio/mpeg">
+</audio>
+
+
+
+
+
+  
+  <br>
+  <div class="parentboxcenter">
+  
+
+   <div class="childtextbox">
+    <h1> kitty land :&#41; the game</h1>
+   </div>
+   
+   
+  
+  
+  </div>
+  <br>
+
+
+  <br>
+
+
+
+
+  
+
+ 
+<br>
+  <div class="parentboxcenter">
+
+    <img src="../resources/images/kitty2.png" class="indicator10"><img>
+  
+    <div class="childtextbox">
+
+      
+    <p class="betterp">
+
+      <b> meow ( ͡° ͜ʖ ͡°) </b>
+
+Welcome to kitty land! In this game you 
+grow the town of kitty land, yeah.  This is an animal crossing/sims type game where you create a 
+little city for creatures to move into. The catch is they are all fucked up and suffer from a variety of ailments. 
+
+Current features:
+
+-> three different npcs+npc houses
+->custom voice lines
+-> need system/basic pathfinding
+
+Planned features:
+
+-> npc currency unlock system, lower currencies can be exchanged for higher currencies
+To buy new npc types
+-> purchasable area expansion
+-> idk turn the whole game into an fps, deck builder, horror game with roguelike elements (joke)
+-> ui that isnt complete shit
+
+
+!!!!!!!!!!!!->  PLAY THE GAME ONLINE NOWWW ->>>>>>>  <a href="../fuckedcatsthegame/fuckerbergthewrath3.html">here</a> to play
+</p>
+  </div>
+ </div>   
+ <br>
+
+
+ <div class="parentboxcenter">
+  
+ 
+ 
+
+</div>
+
+
+
+ <div class="parentboxcenter">
+
+   <img src="../resources/images/kitty1.png" class="indicator10"><img>
+  
+   <img src="../resources/images/kitty3.png" class="indicator10"><img>
+ 
+
+</div>
+
+
+
+
+
+
+</p>
+  </div>
+ </div>   
+
+
+
+
+
+ 
+ 
+
+
+ 
+
+
+
+
+
+ 
+
+ <div class="parentboxcenter">
+
+    <div class="headystyle">
+    
+  
+      
+
+       <button onclick="gotoprevindex(1)">Prev post</button>
+       <button onclick="gotonextindex(1)">Next post</button>
+
+       <button onclick="randomdream()">random post</button>
+       <button onclick="location.href='./dreamlibrary.html'">post library</button>
+
+
+   
+   </div>
+   </div>
+   
+
+
+
+<br><br><br><br>
+<footer>
+
+    <br><br>
+    <div class="parentboxcenter">
+
+
+
+
+    <a href="#top" class="childtextboxpadded">Back to top</a>
+
+
+    
+<script>
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        
+        randodreamaudio()
+    
+        
+
+
+
+
+        let audio = document.getElementById("bgm");
+        setTimeout(() => {
+            
+
+            var value = localStorage.getItem('enablemusic');
+               console.log("MUSIC ENABLE VALUE:")
+
+              console.log(value)
+              if(value==1){
+
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+              }
+
+
+        }, 1500); // Delay autoplay
+
+    });
+
+
+
+
+ 
+
+
+
+    document.body.addEventListener("click", playAudio);
+
+    document.body.addEventListener("mouseover", playAudio);
+
+
+
+
+
+    function playAudio() {
+       
+
+       
+
+        // Remove event listeners after first interaction to prevent multiple triggers
+      
+        let musicenabled=1;
+
+        
+        
+        if(!(document.getElementById("bgm")==null)){
+
+        document.body.click();
+        //console.log("MOUSED!");
+        let audio = document.getElementById("bgm");
+
+
+               var value = localStorage.getItem('enablemusic');
+               console.log("MUSIC ENABLE VALUE:")
+
+              console.log(value)
+              if(value==1){
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+              }
+
+
+        if (audio.paused == false) {
+          
+          document.body.removeEventListener('mouseover', playAudio);
+          console.log("eventlistener removed :(");
+          let audio = document.getElementById("postmusicclick");
+
+          if(value==1){
+          audio.play().catch(error => console.log("Autoplay blocked:", error));
+          }
+          
+        }
+
+
+        }else{
+
+          let audio = document.getElementById("postmusicclick");
+          audio.play().catch(error => console.log("Autoplay blocked:", error));
+
+
+            console.log("post music click");
+
+          
+
+         
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+</script>
+
+
+
+</script>
+
+
+  
+
+
+<script src="../resources/progresources/js/pscript.js"></script>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </footer>
+
+
+
+    
+
+
+    
+
+ 
+
+</body>
+</html>
